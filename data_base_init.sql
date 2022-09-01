@@ -101,15 +101,17 @@ INSERT INTO country (name, capital, id_continent) VALUES ('Guiné Equatorial','M
 INSERT INTO country (name, capital, id_continent) VALUES ('Guiné-Bissau','Bissau',3);
 INSERT INTO country (name, capital, id_continent) VALUES ('Haiti','Porto Príncipe',1);
 INSERT INTO country (name, capital, id_continent) VALUES ('Honduras','Tegucigalpa',1);
+INSERT INTO country (name, capital, id_continent) VALUES ('Holanda','Amsterdã',2);
 INSERT INTO country (name, capital, id_continent) VALUES ('Hungria','Budapeste',2);
 INSERT INTO country (name, capital, id_continent) VALUES ('Iémen','Saná',4);
 INSERT INTO country (name, capital, id_continent) VALUES ('Ilhas Marechal','Majuro',5);
 INSERT INTO country (name, capital, id_continent) VALUES ('Índia','Nova Déli',4);
 INSERT INTO country (name, capital, id_continent) VALUES ('Indonésia','Jacarta',4);
-INSERT INTO country (name, capital, id_continent) VALUES ('Irão','Teerão',4);
+INSERT INTO country (name, capital, id_continent) VALUES ('Irã','Teerão',4);
 INSERT INTO country (name, capital, id_continent) VALUES ('Iraque','Bagdade',4);
 INSERT INTO country (name, capital, id_continent) VALUES ('Irlanda','Dublim',2);
 INSERT INTO country (name, capital, id_continent) VALUES ('Islândia','Reiquiavique',2);
+INSERT INTO country (name, capital, id_continent) VALUES ('Inglaterra','Londres',2);
 INSERT INTO country (name, capital, id_continent) VALUES ('Israel','Jerusalém',4);
 INSERT INTO country (name, capital, id_continent) VALUES ('Itália','Roma',2);
 INSERT INTO country (name, capital, id_continent) VALUES ('Jamaica','Kingston',1);
@@ -153,13 +155,14 @@ INSERT INTO country (name, capital, id_continent) VALUES ('Noruega','Oslo',2);
 INSERT INTO country (name, capital, id_continent) VALUES ('Nova Zelândia','Wellington',5);
 INSERT INTO country (name, capital, id_continent) VALUES ('Omã','Mascate',4);
 INSERT INTO country (name, capital, id_continent) VALUES ('Países Baixos','Amesterdão',2);
+INSERT INTO country (name, capital, id_continent) VALUES ('País de Gales','Cardiff',2);
 INSERT INTO country (name, capital, id_continent) VALUES ('Palau','Ngerulmud',5);
 INSERT INTO country (name, capital, id_continent) VALUES ('Panamá','Cidade do Panamá',1);
 INSERT INTO country (name, capital, id_continent) VALUES ('Papua Nova Guiné','Porto Moresby',5);
 INSERT INTO country (name, capital, id_continent) VALUES ('Paquistão','Islamabade',4);
 INSERT INTO country (name, capital, id_continent) VALUES ('Paraguai','Assunção',1);
 INSERT INTO country (name, capital, id_continent) VALUES ('Peru','Lima',1);
-INSERT INTO country (name, capital, id_continent) VALUES ('Polónia','Varsóvia',2);
+INSERT INTO country (name, capital, id_continent) VALUES ('Polônia','Varsóvia',2);
 INSERT INTO country (name, capital, id_continent) VALUES ('Portugal','Lisboa',2);
 INSERT INTO country (name, capital, id_continent) VALUES ('Quénia','Nairóbi',3);
 INSERT INTO country (name, capital, id_continent) VALUES ('Quirguistão','Bisqueque',4);
@@ -215,3 +218,43 @@ INSERT INTO country (name, capital, id_continent) VALUES ('Venezuela','Caracas',
 INSERT INTO country (name, capital, id_continent) VALUES ('Vietname','Hanói',4);
 INSERT INTO country (name, capital, id_continent) VALUES ('Zâmbia','Lusaca',3);
 INSERT INTO country (name, capital, id_continent) VALUES ('Zimbábue','Harare',3);
+
+CREATE TABLE world_cup_countries(
+	id INT(4) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+	year_of_cup INT(4),
+	id_country INT(4) NOT NULL,
+	FOREIGN KEY (id_country) REFERENCES country(id)
+);
+
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,4);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,8);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,10);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,12);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,19);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,26);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,33);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,35);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,36);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,46);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,49);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,50);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,53);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,57);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,61);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,64);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,70);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,73);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,84);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,90);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,94);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,98);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,117);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,120);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,138);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,145);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,146);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,167);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,169);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,177);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,187);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,193);
