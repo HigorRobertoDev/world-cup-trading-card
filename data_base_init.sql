@@ -258,3 +258,23 @@ INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,169);
 INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,177);
 INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,187);
 INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,193);
+
+CREATE TABLE cep(
+    cep_id INT(8) PRIMARY KEY NOT NULL,
+    state VARCHAR(2) NOT NULL,
+    city VARCHAR(100) NOT NULL,
+    district VARCHAR(100) NOT NULL,
+    id_country INT(4) NOT NULL,
+    FOREIGN KEY (id_country) REFERENCES country(id)
+);
+
+CREATE TABLE users_trading_card(
+    id INT(4) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    pass_word VARCHAR(100) NOT NULL,
+    access_level INT(10) NOT NULL,
+    phone_number VARCHAR(20),
+    cep_id INT(8) NOT NULL,
+    FOREIGN KEY (cep_id) REFERENCES cep(cep_id)
+);
