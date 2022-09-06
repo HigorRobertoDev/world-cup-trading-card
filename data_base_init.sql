@@ -1,6 +1,6 @@
 CREATE TABLE continent (
-	id INT(4) AUTO_INCREMENT PRIMARY KEY,
-	name VARCHAR(50)
+	id INT(4) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+	name VARCHAR(50) NOT NULL
 );
 
 INSERT INTO continent (name) VALUES ('América');
@@ -12,8 +12,8 @@ INSERT INTO continent (name) VALUES ('Antártida');
 
 CREATE TABLE country (
 	id INT(4) AUTO_INCREMENT PRIMARY KEY NOT NULL,
-	name VARCHAR(50),
-	capital VARCHAR(50),
+	name VARCHAR(50) NOT NULL,
+	capital VARCHAR(50) NOT NULL,
 	id_continent INT(4) NOT NULL,
 	FOREIGN KEY (id_continent) REFERENCES continent(id)
 );
