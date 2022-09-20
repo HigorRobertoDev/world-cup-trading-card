@@ -220,10 +220,10 @@ INSERT INTO country (name, capital, id_continent) VALUES ('Zâmbia','Lusaca',3);
 INSERT INTO country (name, capital, id_continent) VALUES ('Zimbábue','Harare',3);
 
 CREATE TABLE world_cup_countries(
-	id INT(4) AUTO_INCREMENT PRIMARY KEY NOT NULL,
-	year_of_cup INT(4),
+	year_of_cup INT(4) NOT NULL,
 	id_country INT(4) NOT NULL,
-	FOREIGN KEY (id_country) REFERENCES country(id)
+	FOREIGN KEY (id_country) REFERENCES country(id),
+	CONSTRAINT pk_key_wordl_cup_countries PRIMARY KEY (year_of_cup, id_country)
 );
 
 INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,4);
@@ -258,6 +258,7 @@ INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,169);
 INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,177);
 INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,187);
 INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2022,193);
+INSERT INTO world_cup_countries (year_of_cup, id_country) VALUES (2026,193);
 
 CREATE TABLE cep(
     cep_id INT(8) PRIMARY KEY NOT NULL,
@@ -277,4 +278,66 @@ CREATE TABLE users_trading_card(
     phone_number VARCHAR(20),
     cep_id INT(8) NOT NULL,
     FOREIGN KEY (cep_id) REFERENCES cep(cep_id)
+);
+
+CREATE TABLE stiker_country (
+    code_name VARCHAR(3) NOT NULL,
+    id_user INT(4) NOT NULL,
+    sticker_1 INT(4),
+    sticker_2 INT(4),
+    sticker_3 INT(4),
+    sticker_4 INT(4),
+    sticker_5 INT(4),
+    sticker_6 INT(4),
+    sticker_7 INT(4),
+    sticker_8 INT(4),
+    sticker_9 INT(4),
+    sticker_10 INT(4),
+    sticker_11 INT(4),
+    sticker_12 INT(4),
+    sticker_13 INT(4),
+    sticker_14 INT(4),
+    sticker_15 INT(4),
+    sticker_16 INT(4),
+    sticker_17 INT(4),
+    sticker_18 INT(4),
+    sticker_19 INT(4),
+    sticker_20 INT(4),
+    FOREIGN KEY (id_user) REFERENCES users_trading_card(id),
+    CONSTRAINT pk_key_stiker_country_users_trading_card PRIMARY KEY (code_name, id_user)
+);
+
+CREATE TABLE sticker_fwc (
+    id_user INT(4) PRIMARY KEY NOT NULL,
+    fwc_0 INT(2),
+    fwc_1 INT(2),
+    fwc_2 INT(2),
+    fwc_3 INT(2),
+    fwc_4 INT(2),
+    fwc_5 INT(2),
+    fwc_6 INT(2),
+    fwc_7 INT(2),
+    fwc_8 INT(2),
+    fwc_9 INT(2),
+    fwc_10 INT(2),
+    fwc_11 INT(2),
+    fwc_12 INT(2),
+    fwc_13 INT(2),
+    fwc_14 INT(2),
+    fwc_15 INT(2),
+    fwc_16 INT(2),
+    fwc_17 INT(2),
+    fwc_18 INT(2),
+    fwc_19 INT(2),
+    fwc_20 INT(2),
+    fwc_21 INT(2),
+    fwc_22 INT(2),
+    fwc_23 INT(2),
+    fwc_24 INT(2),
+    fwc_25 INT(2),
+    fwc_26 INT(2),
+    fwc_27 INT(2),
+    fwc_28 INT(2),
+    fwc_29 INT(2),
+    FOREIGN KEY (id_user) REFERENCES users_trading_card(id)
 );

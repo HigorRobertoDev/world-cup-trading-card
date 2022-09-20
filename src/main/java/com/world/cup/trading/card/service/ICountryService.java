@@ -10,4 +10,6 @@ public interface ICountryService {
 
     Country getById(Long id);
 
+    List<Country> getAllById(List<Long> id);
+
 }

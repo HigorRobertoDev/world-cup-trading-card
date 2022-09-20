@@ -23,4 +23,9 @@ public class CountryService implements ICountryService {
     public Country getById(Long id) {
         return this.countryDao.getById(id);
     }
+
+    @Override
+    public List<Country> getAllById(List<Long> id) {
+        return this.countryDao.findAllById(id);
+    }
 }
